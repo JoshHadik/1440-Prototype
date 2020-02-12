@@ -1,18 +1,18 @@
 language: ruby
 services:
-  - postgresql
+- postgresql
 addons:
   postgresql: '9.6'
 cache:
-  - bundler
+- bundler
 before_script:
-  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
-  - bundle exec rails assets:precompile
-  - bundle exec rails db:test:prepare
+- bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+- bundle exec rails assets:precompile
+- bundle exec rails db:test:prepare
 script:
-  - bundle exec rspec
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:
-    secure: "qHlEE4kolYk1R/d23Qur0MkaNR5J6cg6Stg0gLAnjQGIcXrPm5O9Mv27VwmwxFRgRY866jNheCancEPIj+cSxsXgYO9GLvL2o8Ew7EJ+oCz9pAfhRbvI3C7WcY308LPXhHZPk8g1NEsF4QSIBAjojFsoz9WDyIM6e5FGBbdIjqvBOGeH9aQ1hn1FQveQfvOj31CkdSnM1wz1XDHLzW/Bc965svGW/hqbyq/ugY+vfNxSt/rygo3Un+Uuet7lln5dTTXX3LJ9TwYYp2NsqiKtdwdbdQwDBRHKf0ikQ0yla/FGXF+2LBdCjdulhaBp+Ntjg5kJu7xavI14jWa7cX+KYL2SnJZEv6zkq+LfUg+bmBUi1GGqf/Km+efKvg+jE6lBy2leaDllR99siH+U3q6QTlaW7WKZ/ZlBzPSqH3O5nghbzy2E8qBevP2UHCt4N9ZBJoHRqX/gzedqQrAJ5gTMUWDld1U6GCaNgOY4FCiJpkyrzU0envkyeQ296Bfw3KScnkMTcqp4C4smEkLEXab5n+9NRLdQ6RC5G2JPhjFyhhneO6iocpyzIEKjJcdZ/TKh6AMIMjNuItmX788P94jpGX57ozqRcK2qyNA+FYI5kngLTzsZIQxqeqe+uBBcXXdvv7PM2Q0KqMoJoOvEp9DrJ8dZQS+32CGlryvf8nE2LCo="
+    secure: RT87+3lZ+QYLjpfasoFVPVKG82/a1YqshjB1Pb11N3LEHHsbwh7WKj66BlT3qbRNdnjK84FRPqkAyI9Z7SR82ps4q0Ktvh0/bB2X6fbg7YpRQOLyTdtq/x3kHJ6xqf0dgzGqlFzzYRg5lu4JRHOpc2tew3ozSgTzNGLGoqvPmxKZkDOc/2nywVBT3juVmY/tckj8WsGC+4sdl+4/pv86MT4lwvwRFbRNe7JAVh6zQqCxp7Jrd4iBbjZcyczEyPCBzhKyOSZSdALdWxX1XKqXMXzZ/Q+za2z0eW43H12ESi0KIfuZ3nv2Aw5ApbkhiANCVRlje/Lt3YINbLYpDm35m9frtigVDyEVYKetZI8SxwRk+aGlJEuAzHhxcrHyc8zIOoNNxEoK2UgFfHrJViuojy9idu0ZlX4O7Qzg5f4L67Xk1kWrWB6BeUIj/8kkYgUnxnpxjSgG4kFHmSKHoHski9y25H7Egggiy5y/Pur4YSMR8zP8wR1gvneZpYt/hsYTTl4IOIQH9Hm/mkBssFibrmtfYxzGOLO1eNfeF92bTCHJ+P902LXdT8wOK/1Xae7Evq3QUIoJY8Y9xKCP5+3HOZf7lNuc/9u8p8xdd/FZO8XS9fODYXwD/wjJ5gmXObdy30dILa5WEXcYw8+HJu0coDxqSO1wUeuv3/81w75ew7s=
   app: prototype-1440
