@@ -1,0 +1,10 @@
+<nav id="primary_nav">
+  <ul>
+    <% if current_user %>
+      <%= link_to "Delete Account", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, id: :delete_account_link %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> |
+      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
+  </ul>
+</nav>

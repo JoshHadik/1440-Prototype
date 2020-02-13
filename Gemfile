@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -59,6 +61,11 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'guard-rspec'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'site_prism'
+  gem 'poltergeist'
+  gem 'shoulda'
 end
 
 
