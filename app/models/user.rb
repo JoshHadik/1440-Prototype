@@ -4,4 +4,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :activity_logs
+
+  # Save an activity log for the specified user.
+  def save_activity_log(activity_log)
+    activity_log.user = self
+    activity_log.save
+  end #TT
 end

@@ -1,0 +1,5 @@
+<%= @activity_log.started_at %> |
+<%= @activity_log.ended_at %> |
+<%= @activity_log.label %> |
+<%= link_to("Update", edit_activity_log_path(@activity_log)) %> |
+<%= link_to("Delete", @activity_log, data: { confirm: "Are you sure?" }, method: :delete, id: "delete_activity_log") %>

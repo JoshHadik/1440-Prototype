@@ -15,8 +15,10 @@ RSpec.shared_context "feature context", :shared_context => :metadata do
 
   alias_method :and_i_should_see, :then_i_should_see
 
-  define_method :then_i_should_see_content_for do |content_symbol|
-    then_i_should_see content_for content_symbol
+  define_method :then_i_should_see_content_for do |*content_symbols|
+    content_symbols.each do |content_symbol|
+      then_i_should_see content_for content_symbol
+    end
   end
 
   alias_method :and_i_should_see_content_for, :then_i_should_see_content_for

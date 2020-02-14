@@ -1,5 +1,6 @@
 module DeviseSpecHelper
   attr_accessor :session, :current_user
+  alias_method :signed_in_user, :current_user
 
   include Warden::Test::Helpers
 

@@ -9,6 +9,10 @@ RSpec.shared_context "request context", :shared_context => :metadata do
     sign_in @resource
   end
 
+  define_method :reload_user do
+    signed_in_user.reload
+  end
+
   define_method :sign_in_as_user do |trait=nil|
     sign_in_as :user, trait
   end
@@ -48,6 +52,15 @@ RSpec.shared_context "request context", :shared_context => :metadata do
   end
 
   #### Matchers ####
+
+  RSpec::Matchers.define :match_attributes do |response_hash|
+    match do |resource|
+      response_hash.each do |key, value|
+        expect(resource.send(key)).to eq(value)
+      end
+    end
+    ## TODO -> Write Error Messages
+  end
 
   RSpec::Matchers.define :update do |resource|
     match do |procedure|
