@@ -1,0 +1,29 @@
+RSpec.feature 'FEATURE: <%= file_name.capitalize.split("_").join(" ") %>' do
+  before do
+    sign_in_as :user
+    load_page :page_to_load
+  end
+
+  #### SCENARIOS ####
+
+  scenario 'scenario' do
+    when_i_do_this
+    then_i_should_see that
+  end
+
+  #### SCENARIO METHODS ####
+
+  define_method :when_i_do_this do
+    current_page.do_something
+  end
+
+  define_method :then_i_should_see do |content|
+    expect(page).to have_content content
+  end
+
+  #### STATE ####
+
+  let(:that) do
+    "Some Message"
+  end
+end

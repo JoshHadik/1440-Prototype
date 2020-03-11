@@ -1,0 +1,34 @@
+New Activity Log
+
+<%= form_for @activity_log do |form| %>
+  <% if @activity_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity_log.errors.count, "error") %> prohibited this prompt from being saved:</h2>
+
+      <ul>
+      <% @activity_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :label %>
+    <%= form.text_field :label %>
+  </div>
+
+  <div class="field">
+    <%= form.label :started_at %>
+    <%= form.text_field :started_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ended_at %>
+    <%= form.text_field :ended_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
